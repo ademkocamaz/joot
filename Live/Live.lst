@@ -1,0 +1,93 @@
+################################################################################
+# LIVE
+################################################################################
+
+#####################
+default 1
+title ------------------ Calisan Windowslar ------------------
+root
+#####################
+
+
+# ==============================================================================
+title 001-MiniXP
+set jfile=/joot/Live/mnxp.iso
+# find --set-root %jfile%
+map %jfile% (0xff)
+map --hook
+root (0xff)
+chainloader /wxpe/setupldr.bin
+# ==============================================================================
+
+# ==============================================================================
+title 002-MiniVista
+set jfile=/joot/Live/minivista.iso
+find --set-root %jfile%
+map %jfile% (hd32)
+map --hook
+chainloader (hd32)/BOOTMGR
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 003-MiniWin7
+set jfile=/joot/Live/miniw7.iso
+find --set-root %jfile%
+map %jfile% (hd32)
+map --hook
+chainloader (hd32)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 004-MiniWin8
+set jfile=/joot/Live/Win8PE.iso
+find --set-root %jfile%
+map %jfile% (hd32)
+map --hook
+chainloader (hd32)/BOOTMGR
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 005-Windows98LiveCdIso
+set jfile=/joot/Live/Windows98LiveCdIso.iso
+map %jfile% (0xff)
+map --hook
+root (0xff)
+map --mem /BOOT.IMA (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=2
+# ==============================================================================
+
+# ==============================================================================
+title 006-Windows7PEEnglish
+set jfile=/joot/Live/Windows7PEEnglish.iso
+# find --set-root %jfile%
+dd if=()/firadisk/au.xml of=()/AutoUnattend.xml
+dd if=()/firadisk/spaces.txt of=()/firadisk/ISONAME.CMD
+write ()/firadisk/ISONAME.CMD SET MYISO=%jfile%\r\n
+map %jfile% (0xff)
+map --mem (md)0x800+4 (0x55)
+map --hook
+write (0x55) [FiraDisk]\nStartOptions=cdrom,vmem=find:%jfile%\n\0
+chainloader (0xff)/BOOTMGR
+boot
+# ==============================================================================
+
+# ==============================================================================
+title
+root
+title
+root
+# ###############
+title << Ana Menu
+clear
+echo $[0106] Ana Menu 
+echo
+echo $[0004] Yukleniyor..
+configfile /joot/jenu.lst.gz
+# ###############
+# ==============================================================================

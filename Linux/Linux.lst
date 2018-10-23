@@ -1,0 +1,121 @@
+################################################################################
+# LINUX
+################################################################################
+
+#####################
+default 1
+title ------------------ Linux ------------------
+root
+#####################
+
+# ==============================================================================
+title 001-slax-Turkish-7.0.8-i486.iso
+set file=/joot/Linux/slax-Turkish-7.0.8-i486.iso
+map %file% (0xff)
+map --hook
+root (0xff)
+kernel /slax/boot/vmlinuz vga=773 rw slax.flags=xmode from=%file%
+initrd /slax/boot/initrfs.img
+# ==============================================================================
+
+# ==============================================================================
+title 002-ubuntu-12.04.5-desktop-i386
+set jfile=/joot/Linux/ubuntu-12.04.5-desktop-i386.iso
+find --set-root %jfile% && clear
+map --unmap=0:0xff
+map --unhook
+root (hd0,0)
+map %jfile% (0xff) || map --mem %jfile% (0xff) || map --mem --heads=0 --sectors-per-track=0 %jfile% (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=%jfile% quiet splash --
+initrd /casper/initrd.lz
+map --unmap=0:0xff
+# ==============================================================================
+
+# ==============================================================================
+title 003-Ubuntu 13.04 Desktop i386
+set jfile=/joot/Linux/ubuntu-13.04-desktop-i386.iso
+find --set-root %jfile% && clear
+map --unmap=0:0xff
+map --unhook
+root (hd0,0)
+map %jfile% (0xff) || map --mem %jfile% (0xff) || map --mem --heads=0 --sectors-per-track=0 %jfile% (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=%jfile% quiet splash --
+initrd /casper/initrd.lz
+map --unmap=0:0xff
+# ==============================================================================
+
+# ==============================================================================
+title 004-Ubuntu 14.04.3 LTS x32
+set jfile=/joot/Linux/ubuntu-14.04.3-desktop-i386.iso
+find --set-root %jfile% && clear
+map --unmap=0:0xff
+map --unhook
+root (hd0,0)
+map %jfile% (0xff) || map --mem %jfile% (0xff) || map --mem --heads=0 --sectors-per-track=0 %jfile% (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=%jfile% quiet splash --
+initrd /casper/initrd.lz
+map --unmap=0:0xff
+# ==============================================================================
+
+# ==============================================================================
+title 005-Ubuntu 14.04.3 LTS x64
+set jfile=/joot/Linux/ubuntu-14.04.3-desktop-amd64.iso
+find --set-root %jfile% && clear
+map --unmap=0:0xff
+map --unhook
+root (hd0,0)
+map %jfile% (0xff) || map --mem %jfile% (0xff) || map --mem --heads=0 --sectors-per-track=0 %jfile% (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz.efi file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=%jfile% quiet splash --
+initrd /casper/initrd.lz
+map --unmap=0:0xff
+# ==============================================================================
+
+# ==============================================================================
+title 006-slax-32bit-9.5.0.iso
+set file=/joot/Linux/slax-32bit-9.5.0.iso
+map %file% (0xff)
+map --hook
+root (0xff)
+kernel /slax/boot/vmlinuz vga=normal rw slax.flags=xmode from=%file%
+initrd /slax/boot/initrfs.img
+# ==============================================================================
+
+# ==============================================================================
+title 007-slax-64bit-9.5.0.iso
+set file=/joot/Linux/slax-64bit-9.5.0.iso
+map %file% (0xff)
+map --hook
+root (0xff)
+kernel /slax/boot/vmlinuz vga=normal rw slax.flags=xmode from=%file%
+initrd /slax/boot/initrfs.img
+# ==============================================================================
+
+# ==============================================================================
+title 008-slax-32bit-9.5.0.iso
+find --set-root /joot/Linux/slax-32bit-9.5.0/slax
+kernel /joot/Linux/slax-32bit-9.5.0/slax/boot/vmlinuz vga=normal rw slax.flags=xmode
+initrd /joot/Linux/slax-32bit-9.5.0/slax/boot/initrfs.img
+# ==============================================================================
+
+# ==============================================================================
+title
+root
+title
+root
+# ###############
+title << Ana Menu
+clear
+echo $[0106] Ana Menu 
+echo
+echo $[0106] Yukleniyor..
+configfile /joot/jenu.lst.gz
+# ###############
+# ==============================================================================

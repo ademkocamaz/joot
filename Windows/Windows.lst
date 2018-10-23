@@ -1,0 +1,304 @@
+################################################################################
+# WINDOWS
+################################################################################
+
+#####################
+default 1
+title ------------------ Windows Kurulumlar ------------------
+root
+#####################
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 001-Windows 10 6 in 1 x64 17 Ocak 2016
+echo Windows 10 6 in 1 x64 17 Ocak 2016
+set ISOFILE=/joot/Windows/10/TR_WINDOWS_10_6IN1_VERSION_1511_X64_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 002-Windows 7 x64 6 IN 1 2016.01
+echo Windows 7 x64 6 IN 1 2016.01
+set ISOFILE=/joot/Windows/7/TR_WINDOWS_7_SP1_X64_6_IN_1_2016_OCAK_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 003-Windows 7 ThinClient
+echo Windows 7 ThinClient 7PC32BTTHIN
+set ISOFILE=/joot/Windows/7/7PC32BTTHIN_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 004-Windows 7 MB_W7ALLSP1 2011.02 x32 x64 (Aktivasyonlu)
+echo Windows 7 MB_W7ALLSP1 2011.02 x32 x64 (Aktivasyonlu)
+set ISOFILE=/joot/Windows/7/MB_W7ALLSP1_DVD_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 005-Windows 7 W7.TUM.SURUMLER.SP1.AIO.TR.DVD_BOOT 2011.05 x32 x64 (Aktivasyonlu)
+echo Windows 7 W7.TUM.SURUMLER.SP1.AIO.TR.DVD_BOOT 2011.05 x32 x64 (Aktivasyonlu)
+set ISOFILE=/joot/Windows/7/W7.TUM.SURUMLER.SP1.AIO.TR.DVD_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 006-Windows 7 Embedded SP1 TR-EN 2013.05 x86 (Aktivasyonlu)
+echo Windows 7 Embedded SP1 TR-EN 2013.05 x86 (Aktivasyonlu)
+set ISOFILE=/joot/Windows/7/WIN7_EMBEDDED_STANDARD_SP1_X86_TR_EN_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 007-Windows Server 2012
+echo Windows Server 2012
+set ISOFILE=/joot/Windows/Server/SERVER2012_STD_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+title 008-Windows Server 2008
+echo Windows Server 2008
+set ISOFILE=/joot/Windows/Server/SERVER2008_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 009-Windows Server 2003, Enterprise
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/SERVER/SERVER2003_BOOT.iso
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows Server 2003, Enterprise
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 010-Windows XP Pro 2011.05
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/XP/XP2011.05_BOOT.iso
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows XP Professional 2011.05
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 011-Windows XP Pro 2014.05
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/XP/xp_pro_sp3_sata_tr_may14_BOOT.iso
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows XP Professional 2014.05
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 012-Windows XP Home Edition SP3
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/XP/XPHOMESP3_BOOT.iso
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows XP Home Edition SP3
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 013-Windows XP PRO SP3 2015.02 Sata
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/XP/WinXP_SP3_Pro_VL_TR_BOOT.ISO
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows XP PRO SP3 2015.02 Sata
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 014-Windows XP PRO SP3 2015.02 Driver
+map --unmap=0:0xff
+map --unhook && map --rehook
+# if %@root:~1,3%==hd0 && geometry (hd1) && map (hd0) (hd1) && map (hd1) (hd0) && map --rehook && set PART=%@root:~5,1% && root (hd1,%PART%) || echo !!!
+set GZFILE=/joot/WINDOWS/XP/WinXP_SP3_Pro_VL_D.Edition_TR_BOOT.ISO
+set BOOTFILE=/I386/SETUPLDR.BIN
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+if exist %GZFILE% || find --set-root --ignore-floppies %GZFILE% || echo -> Not found %GZFILE%
+if exist %GZFILE% && set EXIST=1
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && echo Loading Windows XP PRO SP3 2015.02 Driver
+if %EXIST%==1 && echo Please wait...
+if %EXIST%==1 && echo ----------------------------------------------------
+if %EXIST%==1 && map --mem %GZFILE% (0xFF)
+if %EXIST%==1 && map --e820cycles=3
+if %EXIST%==1 && map --rehook && root (0xFF) && chainloader (0xFF)%BOOTFILE% || chainloader () && boot
+boot || echo -> Fail to boot! && echo && pause --wait=5 <<< Return to clasic menu...
+# ==============================================================================
+
+# ==============================================================================
+title 015-Windows 7 x86-x64 13 IN 1 2016.08
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+echo Windows 7 x86-x64 13 IN 1 2016.08
+set ISOFILE=/joot/Windows/7/WINDOWS7-AIO-08.2016_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 016-Windows 8 x64 8 IN 1 2016.01
+# Grub4dos usb diskten çalýþtýrýldýðý için, birinci disk ile ikinci diskin yerini deðiþtiriyoruz!
+echo Windows 8 x64 8 IN 1 2016.01
+set ISOFILE=/joot/Windows/8.1/WIN8.1UP3X648IN1TR201601_BOOT.ISO
+geometry (hd1) && checkrange 0x80 read 0x8280 && map (hd0) (hd1) && map (hd1) (hd0) && map --hook
+# map (hd0) (hd1) && map (hd1) (hd0) && map --hook   # sorun olursa bunu kullan
+find --set-root --ignore-floppies %ISOFILE%
+echo file: && ls %ISOFILE% && echo
+map %ISOFILE% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)/BOOTMGR || chainloader (0xFF) || chainloader ()
+boot
+# ==============================================================================
+
+# ==============================================================================
+title
+root
+title
+root
+# ###############
+title << Ana Menu
+clear
+echo $[0106] Ana Menu 
+echo
+echo $[0106] Yukleniyor..
+configfile /joot/jenu.lst.gz
+# ###############
+# ==============================================================================

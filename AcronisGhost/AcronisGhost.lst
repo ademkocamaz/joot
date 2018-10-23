@@ -1,0 +1,71 @@
+################################################################################
+# ACRONIS & GHOST
+################################################################################
+
+#####################
+default 1
+title ------------------ Acronis & Ghost ------------------
+root
+#####################
+
+# ==============================================================================
+title 001-Acronis Disk Director Suite 12
+set jFile=/joot/AcronisGhost/AcronisDiscDirector12.iso
+map %jFile% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 002-Acronis True Image 2014
+set jfile=/joot/AcronisGhost/AcronisTrueImage2014.iso
+find --set-root %jfile% && clear
+map %jfile% (0xff)
+map --hook
+chainloader (0xff)
+# ==============================================================================
+
+# ==============================================================================
+title 003-Norton Ghost 11.5 Corporate Edition
+set jFile=/joot/AcronisGhost/Ghost.11.5.Boot.CD.iso.gz
+map --mem %jFile% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 004-Acronis True Image 2016
+set jfile=/joot/AcronisGhost/AcronisTrueImage2016.iso
+find --set-root %jfile% && clear
+map %jfile% (0xff)
+map --hook
+chainloader (0xff)
+# ==============================================================================
+
+# ==============================================================================
+title 005-Acronis True Image 2019
+set jfile=/joot/AcronisGhost/AcronisTrueImage2019_14110.iso
+find --set-root %jfile% && clear
+map %jfile% (0xff)
+map --hook
+chainloader (0xff)
+# ==============================================================================
+
+# ==============================================================================
+title
+root
+title
+root
+# ###############
+title << Ana Menu
+clear
+echo $[0106] Ana Menu 
+echo
+echo $[0106] Yukleniyor..
+configfile /joot/jenu.lst.gz
+# ###############
+# ==============================================================================

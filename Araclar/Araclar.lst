@@ -1,0 +1,135 @@
+################################################################################
+# ARACLAR
+################################################################################
+
+#####################
+default 1
+title ------------------ Araclar ------------------
+root
+####################
+
+# ==============================================================================
+title 001-Windows XP Kurtarma Konsolu
+set jfile=/joot/Araclar/RCS.iso
+# find --set-root %jfile%
+map %jfile% (0xff)
+map --hook
+root (0xff)
+chainloader /i386/setupldr.bin
+# ==============================================================================
+
+# ==============================================================================
+title 002-Parted Magic (x32) 2015-08-12
+set ISO=/joot/Araclar/pmagic_2015_08_12.iso
+map %ISO% (hd32)
+map --hook
+root (hd32)
+#chainloader (hd32) kök klasörde olması gerekiyor
+#boot
+kernel /pmagic/bzImage edd=on vga=normal vmalloc=512MiB keymap=trq iso_location=/joot/Araclar
+initrd /pmagic/initrd.img /pmagic/fu.img /pmagic/m32.img
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 003-Parted Magic (x64) 2015-08-12
+set ISO=/joot/Araclar/pmagic_2015_08_12.iso
+map %ISO% (hd32)
+map --hook
+root (hd32)
+#chainloader (hd32) kök klasörde olması gerekiyor
+#boot
+kernel /pmagic/bzImage64 edd=on vga=normal vmalloc=512MiB keymap=trq iso_location=/joot/Araclar
+initrd /pmagic/initrd.img /pmagic/fu.img /pmagic/m64.img
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 004-Ultimate Boot CD v5.3.5
+set jfile=/joot/Araclar/UltimateBootCDv5.3.5.iso
+map %jfile% (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)
+# ==============================================================================
+
+# ==============================================================================
+title 005-Passware Kit Enterprise Password Reset\nVery Powerful Windows Password Reset for XP/Vista/Server/7.
+set jiso=/joot/Araclar/PasswareKitEnterprisePasswordReset.iso
+set jimg=/joot/Araclar/PasswareKitEnterprisePasswordReset.img
+map --mem %jiso% (0xFF) 
+map --mem %jimg% (fd0)
+map --hook
+root (0xFF)
+chainloader (0xFF)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 006-Hiren's BootCD 15.2 \n Hiren's.BootCD.15.2.iso (594 MB)
+set jfile=/joot/Araclar/Hiren's.BootCD.15.2.iso
+map %jfile% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 007-Windows Password Reset
+set jfile=/joot/Araclar/Windows_Password_Reset_cd110511.iso
+map --mem %jfile% (0xFF)
+map --hook
+root (0xFF)
+chainloader (0xFF)
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 008-Windows 98 Baslangic Disketi (Ingilizce) \n WIN98.IMG (1,40 MB)
+set IMGFILE=/joot/Araclar/WIN98.IMG
+find --set-root --ignore-floppies %IMGFILE%
+map --mem %IMGFILE% (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 009-Windows 98 Baslangic Disketi (Turkce) \n TRKW98SEbootdisk.img (1,40 MB)
+set jfile=/joot/Araclar/TRKW98SEbootdisk.img
+map %jfile% (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+# ==============================================================================
+
+# ==============================================================================
+title 010-Windows Me Baslangic Disketi
+set jfile=/joot/Araclar/WinMe_bootdisk.iso
+map %jfile% (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+# ==============================================================================
+
+# ==============================================================================
+title
+root
+title
+root
+# ###############
+title << Ana Menu
+clear
+echo $[0106] Ana Menu 
+echo
+echo $[0106] Yukleniyor..
+configfile /joot/jenu.lst.gz
+# ###############
+# ==============================================================================
